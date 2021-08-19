@@ -7,7 +7,7 @@ Two BLE Devices (Built-in BLE device can be used)
 # How to use
 Setup noble and bleno.
 
-In my environment, noble-winrt (https://github.com/Timeular/noble-winrt) and original bleno (https://github.com/noble/bleno) worked. (Windows 10 21H1 19043.1165)
+In my environment, noble-winrt (https://github.com/Timeular/noble-winrt) and original bleno (https://github.com/noble/bleno) worked. (Windows 10 21H1 19043.1165, Built-in Bluetooth Adapter, ELECOM LBT-UAN05C1 WinUSB[Zadig])
 
 Adjust Drivers and Modules to your environment.
 
