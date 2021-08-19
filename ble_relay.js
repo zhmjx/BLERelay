@@ -179,10 +179,6 @@ class CopiedService extends BlenoPrimaryService {
   }
 }
 
-// var globalupdateValueCallback = function () {
-//   console.error("globalupdateValueCallback : NOT INITALIZED");
-// }
-
 class CopiedCharacteristic extends Characteristic {
   constructor(characteristic) {
     super({
