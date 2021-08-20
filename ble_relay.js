@@ -195,7 +195,7 @@ class CopiedCharacteristic extends Characteristic {
             console.error(error);
             return;
           }
-          console.log(`read: ${data.toString('hex')} (${data.toString()})`);
+          console.log(`${characteristic.uuid}\tread\t${data.toString('hex')}`); // ${data.toString()}
           callback(result, data);
         });
       },
