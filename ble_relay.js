@@ -149,7 +149,7 @@ function onAllServicesAndCharacteristicsDiscovered(
 
   characteristics.forEach(characteristic => {
     // 2A00:Device Name
-    if (removeDashes(characteristic.uuid) === '2A00'.toLowerCase() || removeDashes(characteristic.uuid) === BaseUUID('2A00')) {
+    if (removeDashes(characteristic.uuid).toLowerCase() === '2A00'.toLowerCase() || removeDashes(characteristic.uuid).toLowerCase() === BaseUUID('2A00')) {
       characteristic.read((error, data) => {
         if (error) {
           console.error('error on read');
