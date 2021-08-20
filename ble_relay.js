@@ -22,8 +22,8 @@ function removeDashes(uuidDash) {
   return uuidDash.replace(/-/g, '');
 }
 
-function isBaseUUIDDash(X) {
-  return X.match(/^0000[0-9a-f]{4}-0000-1000-8000-00805f9b34fb$/i);
+function isBaseUUID(X) {
+  return removeDashes(X).match(/^0000[0-9a-f]{4}00001000800000805f9b34fb$/i) || X.length == 4;
 }
 
 // Central Part
@@ -272,7 +272,7 @@ function act_as_device(services, characteristics) {
   var ADVERTISING_SERVICE_UUIDS = [];
 
   services.forEach(service => {
-    if (!isBaseUUIDDash(service.uuid)) {
+    if (!isBaseUUID(service.uuid)) {
       ADVERTISING_SERVICE_UUIDS.push(service.uuid);
     }
   });
@@ -328,7 +328,7 @@ function act_as_device(services, characteristics) {
 
     // debug section
     characteristics.forEach(characteristic => {
-      if (!isBaseUUIDDash(characteristic.uuid)) {
+      if (!isBaseUUID(characteristic.uuid)) {
         characteristic.setMaxListeners(100);
         characteristic.on('write', () => {
           console.debug('[onwrite]');
